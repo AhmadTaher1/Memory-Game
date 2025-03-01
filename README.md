@@ -8,4 +8,7 @@ A fun and interactive memory game built using JavaScript as part of my ITI cours
 🃏 Card Flipping: Click to reveal images and find matching pairs.
 🎉 Completion Message: Displays your completion time after you win.
 📷 Preview
+
+
+
 ![9c853745-fd47-48f9-b470-4a26e0bba00c](https://github.com/user-attachments/assets/da02a1d5-f3d9-49f6-9ff2-63351b55529e)
