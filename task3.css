@@ -1,0 +1,128 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, Tahoma, sans-serif;
+  background-image: url("main.jpg");
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.controls {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  /* appear in top */
+  z-index: 2;
+  background-image: url("start.jpg");
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.controls span {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  color: #f6f6f6;
+  background-color: #4c09c9;
+  padding: 25px;
+  font-size: 40px;
+  font-weight: bolder;
+  text-align: center;
+  border-radius: 25px;
+  cursor: pointer;
+}
+.info {
+  margin: 20px auto;
+  background-color: #f6f6f6;
+  padding: 20px;
+  font-size: 24px;
+  overflow: hidden;
+  border: 2px solid #2196f3;
+}
+
+.info .name {
+  float: left;
+  width: 50%;
+}
+
+.info .tries {
+  float: right;
+  width: 50%;
+  text-align: right;
+}
+
+.game {
+  display: flex;
+  width: 1100px;
+  flex-wrap: wrap;
+  margin: 20px auto;
+  gap: 10px;
+}
+
+.game .block {
+  height: 200px;
+  width: 200px;
+  box-sizing: border-box;
+  transition: transform 0.5s;
+  transform-style: preserve-3d;
+  cursor: pointer;
+  position: relative;
+  flex-shrink: 0;
+  margin: 0 10px 20px;
+}
+
+.game .block .front {
+  background-color: #333;
+  line-height: 200px;
+}
+
+/* at intial state the front is displayed and the back is rotated by 180 deg */
+.game .block .front::before {
+  content: "?";
+  color: aliceblue;
+  font-size: 140px;
+  font-weight: bold;
+}
+
+.game .block .back {
+  background-color: #1e221e;
+  transform: rotateY(180deg);
+}
+
+.game .block .back img {
+  width: 190px;
+  height: 190px;
+  margin: auto;
+}
+
+.game .block .face {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  border: 5px solid #2196f3;
+  /* This hides the back side of an element when it's rotated in 3D. */
+  backface-visibility: hidden;
+}
+
+.game .block.flipped {
+  transform: rotateY(180deg);
+}
+
+.game .block.matched {
+  transform: rotateY(180deg);
+}
+
+/* won't responce to mouse clicking */
+.game.noclicking {
+  pointer-events: none;
+}
